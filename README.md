@@ -1,2 +1,3 @@
-# poo_es_2021
-Repositório para a disciplina de POO ES 2021.2
+# Repositório da disciplina de POO ES 2021.2
+
+Neste repositório, eu postarei os códigos vistos nos slides das aulas e/ou codificados durante a aula.
