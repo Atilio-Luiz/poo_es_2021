@@ -1,8 +1,8 @@
-# Tamagotchi  (modificadores de acesso, gets, sets)
+# Tamagotchi - Seu Pet Virtual
 
 ![](figura.jpg)
 
-<!--TOC_BEGIN-->
+<!--TOC_BEGIN
 - [Requisitos](#requisitos)
 - [Shell](#shell)
     - [Exemplo 1](#exemplo-1)
@@ -10,12 +10,13 @@
     - [Exemplo 3](#exemplo-3)
 - [Diagrama](#diagrama)
 - [Esqueleto](#esqueleto)
-<!--TOC_END-->
+TOC_END-->
 
+## Motivação
 
 Você deve implementar um simulador de bichinho virtual. Ele poderá comer, brincar, dormir e tomar banho. E eventualmente morrerá, se você não cuidar bem dele.
 
-O projeto deve conter pelo menos duas classes. A classe Tamagotchi e a class Jogo.
+O projeto deve conter pelo menos duas classes. A classe **Tamagotchi** e a classe **Jogo**.
 
 ***
 
@@ -146,13 +147,18 @@ $end
 
 ***
 ## Diagrama
-Os métodos get e set estão marcados de △ apenas para facilitar a visualização, mas podem ser tratados como métodos públicos.
 
 ![](diagrama.png)
 
+Salve seu trabalho em um pacote chamado **tamagotchi**
+
 ***
+
 ## Esqueleto
-```java
+
+No arquivo abaixo você encontra um esqueleto inicial da atividade.
+
+
 <!--FILTER Solver.java java-->
 ```java
 class Pet{
