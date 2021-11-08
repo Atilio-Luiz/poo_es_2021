@@ -16,8 +16,6 @@ TOC_END-->
 
 Você deve implementar um simulador de bichinho virtual. Ele poderá comer, brincar, dormir e tomar banho. E eventualmente morrerá, se você não cuidar bem dele.
 
-O projeto deve conter pelo menos duas classes. A classe **Tamagotchi** e a classe **Jogo**.
-
 ***
 
 ## Requisitos
