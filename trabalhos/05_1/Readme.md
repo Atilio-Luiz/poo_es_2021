@@ -73,7 +73,8 @@ $show
 E:15/20, S:10/10, L:7/15, D:2, I:3
 
 #__case dormir
-# O Comando "$sleep" aumenta energia até o máximo, altera a saciedade em -1 e idade aumenta do número de turnos que o pet dormiu.
+# O Comando "$sleep" aumenta energia até o máximo, altera a saciedade em -1 e 
+# idade aumenta do número de turnos que o pet dormiu.
 # Os outros atributos permanecem inalterados.
 $sleep
 $show
