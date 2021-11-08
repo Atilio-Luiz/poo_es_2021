@@ -73,17 +73,17 @@ $show
 E:15/20, S:10/10, L:7/15, D:2, I:3
 
 #__case dormir
-# O Comando "$sleep" aumenta energia até o máximo e idade aumenta do número de turnos que o pet dormiu.
+# O Comando "$sleep" aumenta energia até o máximo, altera a saciedade em -1 e idade aumenta do número de turnos que o pet dormiu.
 # Os outros atributos permanecem inalterados.
 $sleep
 $show
-E:20/20, S:9/10, L:7/15, D:2, I:8
+E:20/20, S:9/10, L:7/15, D:2, I:4
 
 #__case tomar banho
 # O comando "$clean" alteram em -3 energia, -1 na saciedade, MAX na limpeza, +0 diamantes, +2 na idade.
 $clean
 $show
-E:17/20, S:8/10, L:15/15, D:2, I:10
+E:17/20, S:8/10, L:15/15, D:2, I:6
 
 #__case dormir sem sono
 # Para dormir, precisa ter perdido pelo menos 5 unidades de energia
@@ -97,11 +97,11 @@ $play
 $play
 $play
 $show
-E:9/20, S:4/10, L:3/15, D:6, I:14
+E:9/20, S:4/10, L:3/15, D:6, I:10
 $play
 fail: pet morreu de sujeira
 $show
-E:7/20, S:3/10, L:0/15, D:7, I:15
+E:7/20, S:3/10, L:0/15, D:7, I:11
 $play
 fail: pet esta morto
 $eat
