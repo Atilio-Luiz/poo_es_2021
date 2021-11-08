@@ -18,7 +18,7 @@ O objetivo da atividade é treinar a estrutura de dados ArrayList.
 
 Requisito:
 - Utilize uma estrutura de armazenamento linear que permita elementos duplicados e mantenha a ordem de inserção. 
-- Dica: Use um ArrayList.
+- Use um ArrayList.
 
 
 ## Shell
@@ -169,7 +169,7 @@ $end
 - **int lastIndexOf(Object element)**: Retorna a posição da última ocorrência do elemento especificado na lista.
 - **Object remove(int index)**: Remove o i-ésimo elemento da lista.
 - **Object set(int index, Object element)**: Substitui o i-ésimo elemento da lista pelo elemento especificado.
-- int size(): Retorna o número de elementos da lista.
+- **int size():** Retorna o número de elementos da lista.
 ***
 
 ## Esqueleto
