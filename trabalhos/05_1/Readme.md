@@ -1,8 +1,8 @@
-# Tamagotchi  (modificadores de acesso, gets, sets)
+# Tamagotchi - Seu Pet Virtual
 
 ![](figura.jpg)
 
-<!--TOC_BEGIN-->
+<!--TOC_BEGIN
 - [Requisitos](#requisitos)
 - [Shell](#shell)
     - [Exemplo 1](#exemplo-1)
@@ -10,8 +10,9 @@
     - [Exemplo 3](#exemplo-3)
 - [Diagrama](#diagrama)
 - [Esqueleto](#esqueleto)
-<!--TOC_END-->
+TOC_END-->
 
+## Motivação
 
 Você deve implementar um simulador de bichinho virtual. Ele poderá comer, brincar, dormir e tomar banho. E eventualmente morrerá, se você não cuidar bem dele.
 
