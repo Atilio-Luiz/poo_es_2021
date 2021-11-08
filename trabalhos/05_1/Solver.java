@@ -1,12 +1,9 @@
-import java.util.Scanner;
-
 class Pet{
     private int energyMax, hungryMax, cleanMax;
     private int energy, hungry, shower;
     private int diamonds;
     private int age;
     private boolean alive;
-
     // Atribui o valor de energia
     // Se o valor ficar abaixo de 0, o pet morre de fraqueza
     // Garanta que os valores ficarão no interalo 0 - max
@@ -22,126 +19,24 @@ class Pet{
         else
             this.energy = value;
     }
-    
-
-    void setHungry(int value){
-        if(value <= 0){
-            hungry = 0;
-            System.out.println("fail: pet morreu de fome");
-            alive = false;
-        }
-        else if(value > hungryMax)
-            hungry = hungryMax;
-        else
-            hungry = value;
-    }
-    
-    void setClean(int value){
-        if(value <= 0){
-            shower = 0;
-            System.out.println("fail: pet morreu de sujeira");
-            alive = false;
-        }
-        else if(value > cleanMax)
-            shower = cleanMax;
-        else
-            shower = value;
-    }
-
-
-    public Pet(int energy, int hungry, int shower){
-        this.energyMax = energy;
-        this.hungryMax = hungry;
-        this.cleanMax = shower;
-        this.energy = energy;
-        this.hungry = hungry; 
-        this.shower = shower;
-        age = 0;
-        diamonds = 0;
-        alive = true;
-    }
-
-    int getClean(){
-        return shower;
-    }
-    int getHungry(){
-        return hungry;
-    }
-    int getEnergy(){
-        return energy;
-    }
-    int getEnergyMax(){
-        return energyMax;
-    }
-    int getCleanMax(){
-        return cleanMax;
-    }
-    int getHungryMax(){
-        return hungryMax;
-    }
-
-    public String toString(){
-        String ss = "";
-        ss +=  "E:" + energy + "/" + energyMax + ", "
-            +  "S:" + hungry + "/" + hungryMax + ", "
-            +  "L:" + shower + "/" + cleanMax + ", "
-            +  "D:" + diamonds + ", " + "I:"  + age;
-        return ss;
-    }
-
-    public boolean testAlive(){
-        if(alive)
-            return true;
-        System.out.println("fail: pet esta morto");
-        return false;
-    }
-
+    void setHungry(int value);
+    void setClean(int value);
+    public Pet(int energy, int hungry, int shower);
+    int getClean();
+    int getHungry();
+    int getEnergy();
+    int getEnergyMax();
+    int getCleanMax();
+    int getHungryMax();
+    public String toString();
+    public boolean testAlive();
     // Invoca o método testAlive para verificar se o pet esta vivo
     // Se estiver vivo, altere os atributos utilizando os métodos set e get
-    public void play(){
-        if(!testAlive())
-            return;
-        setEnergy(getEnergy() - 2);
-        setHungry(getHungry() - 1);
-        setClean(getClean() - 3);
-        diamonds += 1;
-        age += 1;
-    }
-
-    public void shower(){
-        if(!testAlive())
-            return;
-        setEnergy(getEnergy() - 3);
-        setHungry(getHungry() - 1);
-        setClean(cleanMax);
-        age += 2;
-    }
-
-    public void eat(){
-        if(!testAlive())
-            return;
-        setEnergy(getEnergy() - 1);
-        setHungry(getHungry() + 4);
-        setClean(getClean() - 2);
-        age += 1;
-    }
-
-    public void sleep(){
-        if(!testAlive())
-            return;
-        if(energyMax - getEnergy() < 5){
-            System.out.println("fail: nao esta com sono");
-            return;
-        }
-        age += energyMax - getEnergy();
-        setEnergy(energyMax);
-        setHungry(getHungry() - 1);
-    }
-
+    public void play();
+    public void shower();
+    public void eat();
+    public void sleep();
 }
-
-
-
 class Solver{
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
