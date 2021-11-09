@@ -1,4 +1,4 @@
-# Mestre dos Vetores (Manipulação de Arraylist)
+# Mestre dos ArrayLists (Manipulação de Arraylist)
 
 <!--TOC_BEGIN
 - [Requisitos](#requisitos)
