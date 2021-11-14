@@ -102,6 +102,7 @@ $end
 
 ![](diagrama.png)
 
+Salve o seu trabalho em uma pasta chamada **lapiseiragrafites** e envie pelo Moodle
 
 ***
 ## Esqueleto
