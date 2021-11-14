@@ -14,6 +14,7 @@ Implemente o modelo de uma lapiseira que pode conter um único grafite.
     - Não deve aceitar um grafite de calibre não compatível.
 - Remover grafite
     - Retira o grafite se houver algum.
+    - Se não houver grafite, imprimir mensagem de erro: "fail: nao existe grafite"
 - Escrever folha
     - Não é possível escrever se não há grafite.
     - Quanto mais macio o grafite, mais rapidamente ele se acaba. Para simplificar, use a seguinte regra:
@@ -22,7 +23,7 @@ Implemente o modelo de uma lapiseira que pode conter um único grafite.
         - Grafite 4B: 4mm por folha.
         - Grafite 6B: 6mm por folha.
         
-    - O último centímetro de um grafite não pode ser aproveitado, quando o grafite estiver com 10mm, não é mais possível escrever e o grafite deve ser retirado.
+    - Os últimos 10 milímetros de um grafite não podem ser aproveitados. Quando o grafite tiver comprimento menor ou igual a 10mm, não é mais possível escrever e o grafite deve ser retirado.
     - Se não houver grafite suficiente para terminar a folha, avise que o texto ficou incompleto.
     - Avise quando o grafite acabar.
 
@@ -66,8 +67,9 @@ $add 0.9 4B 14
 $write
 warning: grafite acabou
 $show
-calibre: 0.9, grafite: [0.9:4B:10]
+calibre: 0.9, grafite: null
 $remove
+fail: nao existe grafite
 $show
 calibre: 0.9, grafite: null
 $add 0.9 4B 16
@@ -78,7 +80,7 @@ $write
 fail: folha incompleta
 warning: grafite acabou
 $show
-calibre: 0.9, grafite: [0.9:4B:10]
+calibre: 0.9, grafite: null
 $end
 ```
 
@@ -183,14 +185,12 @@ class Manual {
         lapiseira.inserir(new Grafite(0.9f, "4B", 30));
         lapiseira.escrever();
         System.out.println(lapiseira);
-        //calibre: 0.9, grafite: [0.9:4B:6]
+        //calibre: 0.9, grafite: [0.9:4B:26]
         lapiseira.escrever();
         lapiseira.escrever();
         lapiseira.escrever();
-        //fail: folhas escritas completas: 1
-        //warning: grafite acabou
         System.out.println(lapiseira);
-        //calibre: 0.9, grafite: null
+        //calibre: 0.9, grafite: [0.9:4B:14]
 
         //case escrevendo 2
         lapiseira = new Lapiseira(0.9f);
@@ -200,17 +200,10 @@ class Manual {
         lapiseira.escrever();
         lapiseira.escrever();
         lapiseira.escrever();
-        lapiseira.escrever();
-        System.out.println(lapiseira);
-        //calibre: 0.9, grafite: [0.9:2B:7]
-        lapiseira.escrever();
-        lapiseira.escrever();
-        lapiseira.escrever();
-        lapiseira.escrever();
-        //fail: folhas escritas completas: 3
-        //warning: grafite acabou
         System.out.println(lapiseira);
         //calibre: 0.9, grafite: null
+        lapiseira.escrever();
+        //fail: nao existe grafite
     }
 }
 ```
