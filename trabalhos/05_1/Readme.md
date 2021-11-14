@@ -30,9 +30,11 @@ Seu sistema deverá:
         - ambos iniciando em 0.
 - **Comendo, Jogando, Dormindo e tomando banho**
     - Cada operação causa aumento e reduções nos atributos.
-    - Nenhum atributo pode passar do máximo ou ir abaixo de 0.
+    - Nenhum atributo pode passar do máximo ou ir abaixo de 0. **Dica:** Faça essa checagem nos métodos setters, assim como já está feito no método **setEnergy**. Veja o que já está feito no exemplo e se inspire para fazer os demais. 
 - **Morrendo**
     - Se algum atributo chegar a 0, o pet morre e nenhuma ação pode ser feita a não ser mostrar os dados.
+- **Modificadores de acesso**
+    - Analise os métodos setters, juntamente com a lógica do problema, e decida qual a visibilidade que esses métodos devem ter: privada, pública ou *package access*. Modifique ou não a visibilidade deles de acordo com a sua análise.
 
 ***
 
