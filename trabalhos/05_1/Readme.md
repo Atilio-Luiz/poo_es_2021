@@ -161,7 +161,7 @@ Salve todos os arquivos do seu trabalho numa pasta chamada **tamagotchi** e envi
 ## Esqueleto
 
 No arquivo abaixo você encontra um esqueleto inicial da atividade.
-**Atenção:** Leia os comentários com atenção e certifique-se de que você entendeu. Veja que os métodos *play()*, *shower()*, *eat()* e *sleep()* devem alterar os valores dos atributos de saciedade, energia e limpeza usando apenas os métodos getters e setters. Além disso, esses quatro métodos também devem fazer uso do método *textAlive()*.
+**Atenção:** Leia os comentários com atenção e certifique-se de que você entendeu. Veja que os métodos *play()*, *shower()*, *eat()* e *sleep()* devem alterar os valores dos atributos de saciedade, energia e limpeza usando apenas os métodos getters e setters. Além disso, esses quatro métodos também devem fazer uso do método *testAlive()*.
 
 
 <!--FILTER Solver.java java-->
