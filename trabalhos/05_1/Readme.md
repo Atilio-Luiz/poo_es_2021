@@ -265,12 +265,12 @@ class Manual {
         //case dormir
         pet.sleep();
         System.out.print(pet);
-        //E:20/20, S:9/10, L:7/15, D:2, I:8
+        //E:20/20, S:9/10, L:7/15, D:2, I:4
 
         //case tomar banho
         pet.shower();
         System.out.print(pet);
-        //E:17/20, S:8/10, L:15/15, D:2, I:10
+        //E:17/20, S:8/10, L:15/15, D:2, I:6
 
         //case dormir sem sono
         pet.sleep();
@@ -282,11 +282,11 @@ class Manual {
         pet.play();
         pet.play();
         System.out.print(pet);
-        //E:9/20, S:4/10, L:3/15, D:6, I:14
+        //E:9/20, S:4/10, L:3/15, D:6, I:10
         pet.play();
         //fail: pet morreu de sujeira
         System.out.print(pet);
-        //E:7/20, S:3/10, L:0/15, D:7, I:15
+        //E:7/20, S:3/10, L:0/15, D:7, I:11
         pet.play();
         //fail: pet esta morto
         pet.eat();
