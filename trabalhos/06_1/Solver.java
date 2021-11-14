@@ -81,16 +81,24 @@ class Manual {
         lapiseira.escrever();
         //warning: grafite acabou
         System.out.println(lapiseira);
+        //calibre: 0.9, grafite: [0.9:4B:4]
+        lapiseira.inserir(new Grafite(0.9f, "4B", 30));
+        //fail: ja existe grafite
+        lapiseira.escrever();
+        //warning: grafite acabou
+        System.out.println(lapiseira);
+        //calibre: 0.9, grafite: [0.9:4B:4]
+        lapiseira.remover();
+        System.out.println(lapiseira);
         //calibre: 0.9, grafite: null
         lapiseira.inserir(new Grafite(0.9f, "4B", 30));
+        System.out.println(lapiseira);
+        //calibre: 0.9, grafite: [0.9:4B:30]
+        lapiseira.escrever();
+        lapiseira.escrever();
         lapiseira.escrever();
         System.out.println(lapiseira);
-        //calibre: 0.9, grafite: [0.9:4B:26]
-        lapiseira.escrever();
-        lapiseira.escrever();
-        lapiseira.escrever();
-        System.out.println(lapiseira);
-        //calibre: 0.9, grafite: [0.9:4B:14]
+        //calibre: 0.9, grafite: [0.9:4B:18]
 
         //case escrevendo 2
         lapiseira = new Lapiseira(0.9f);
@@ -100,9 +108,11 @@ class Manual {
         lapiseira.escrever();
         lapiseira.escrever();
         lapiseira.escrever();
+        //fail: folha incompleta
+        //warning: grafite acabou
         System.out.println(lapiseira);
-        //calibre: 0.9, grafite: null
+        //calibre: 0.9, grafite: [0,9:2B:10]
         lapiseira.escrever();
-        //fail: nao existe grafite
+        //warning: grafite acabou
     }
 }
