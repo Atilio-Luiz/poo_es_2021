@@ -111,7 +111,7 @@ class Lapiseira {
     String toString();
     boolean inserir(Grafite grafite);
     Grafite remover();
-    void escreverFolha();
+    void escrever();
 }
 class Solver{
     public static void main(String[] args) {
@@ -138,7 +138,7 @@ class Solver{
             } else if(ui[0].equals("show")) {
                 System.out.println(lapiseira);
             } else if (ui[0].equals("write")) {
-                lapiseira.escreverFolha();
+                lapiseira.escrever();
             } else {
                 System.out.println("fail: comando invalido");
             }
@@ -176,17 +176,17 @@ class Manual {
         //case escrevendo 1
         lapiseira = new Lapiseira(0.9f);
         lapiseira.inserir(new Grafite(0.9f, "4B", 4));
-        lapiseira.escreverFolha();
+        lapiseira.escrever();
         //warning: grafite acabou
         System.out.println(lapiseira);
         //calibre: 0.9, grafite: null
         lapiseira.inserir(new Grafite(0.9f, "4B", 30));
-        lapiseira.escreverFolha();
+        lapiseira.escrever();
         System.out.println(lapiseira);
         //calibre: 0.9, grafite: [0.9:4B:6]
-        lapiseira.escreverFolha();
-        lapiseira.escreverFolha();
-        lapiseira.escreverFolha();
+        lapiseira.escrever();
+        lapiseira.escrever();
+        lapiseira.escrever();
         //fail: folhas escritas completas: 1
         //warning: grafite acabou
         System.out.println(lapiseira);
@@ -197,16 +197,16 @@ class Manual {
         lapiseira.inserir(new Grafite(0.9f, "2B", 15));
         System.out.println(lapiseira);
         //calibre: 0.9, grafite: [0.9:2B:15]
-        lapiseira.escreverFolha();
-        lapiseira.escreverFolha();
-        lapiseira.escreverFolha();
-        lapiseira.escreverFolha();
+        lapiseira.escrever();
+        lapiseira.escrever();
+        lapiseira.escrever();
+        lapiseira.escrever();
         System.out.println(lapiseira);
         //calibre: 0.9, grafite: [0.9:2B:7]
-        lapiseira.escreverFolha();
-        lapiseira.escreverFolha();
-        lapiseira.escreverFolha();
-        lapiseira.escreverFolha();
+        lapiseira.escrever();
+        lapiseira.escrever();
+        lapiseira.escrever();
+        lapiseira.escrever();
         //fail: folhas escritas completas: 3
         //warning: grafite acabou
         System.out.println(lapiseira);
