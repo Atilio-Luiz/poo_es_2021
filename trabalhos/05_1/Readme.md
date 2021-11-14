@@ -32,9 +32,10 @@ Seu sistema deverá:
     - Cada operação causa aumento e reduções nos atributos.
     - Nenhum atributo pode passar do máximo ou ir abaixo de 0. **Dica:** Faça essa checagem nos métodos setters, assim como já está feito no método **setEnergy**. Veja o que já está feito no exemplo e se inspire para fazer os demais. 
 - **Morrendo**
-    - Se algum atributo chegar a 0, o pet morre e nenhuma ação pode ser feita a não ser mostrar os dados.
+    - Se algum atributo chegar a 0, o pet morre e nenhuma ação pode ser feita a não ser mostrar os dados. **Dica:** Faça essa checagem nos métodos setters, assim como já está feito no método **setEnergy**. Veja o que já está feito no exemplo e se inspire para fazer os demais.
 - **Modificadores de acesso**
     - Analise os métodos setters, juntamente com a lógica do problema, e decida qual a visibilidade que esses métodos devem ter: privada, pública ou *package access*. Modifique ou não a visibilidade deles de acordo com a sua análise.
+    - **Dica:** Dentro da classe, use os métodos setters para modificar os valores dos atributos e use os métodos getters para obter os valores dos atributos.
 
 ***
 
@@ -149,15 +150,18 @@ $end
 ***
 ## Diagrama
 
+Todos os métodos getters e setters foram modelados como *public* no diagrama abaixo, mas você tem permissão de modificar nessa atividade, caso julgue necessário.
+
 ![](diagrama.png)
 
-Salve seu trabalho em um pacote chamado **tamagotchi**
+Salve todos os arquivos do seu trabalho numa pasta chamada **tamagotchi** e envie pelo Moodle (quando ele estiver vivo!). 
 
 ***
 
 ## Esqueleto
 
 No arquivo abaixo você encontra um esqueleto inicial da atividade.
+**Atenção:** Leia os comentários com atenção e certifique-se de que você entendeu. Veja que os métodos *play()*, *shower()*, *eat()* e *sleep()* devem alterar os valores dos atributos de saciedade, energia e limpeza usando apenas os métodos getters e setters. Além disso, esses quatro métodos também devem fazer uso do método *textAlive()*.
 
 
 <!--FILTER Solver.java java-->
