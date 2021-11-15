@@ -51,7 +51,7 @@ $show
 $end
 ```
 
-## Opcional
+## Adicional
 ```sh
 $saldo _nome
 $caixa
