@@ -16,6 +16,7 @@ Além disso, também estão listados os trabalhos semanais (valendo nota).
 - [Lapiseira e Grafite](trabalhos/06_1/Readme.md)
 - [Lapiseira com vários grafites](trabalhos/06_2/Readme.md)
 - [Pula-pula no parquinho](trabalhos/06_3/Readme.md)
-- [Slides da aula](slides/07-Relacionamentos-entre-objetos.pdf)
-- [Link para a aula do dia 11/12](https://drive.google.com/file/d/1JhI6vMbPZusw977hwJDkifzDLW65TebD/view?usp=sharing)
-- [Link para a aula do dia 12/11](https://drive.google.com/file/d/10B7dDcFTvGfDYALPJTDYnV6RUSFoBjlz/view?usp=sharing)
+- **Materiais**
+    - [Slides da aula](slides/07-Relacionamentos-entre-objetos.pdf)
+    - [Link para a aula do dia 11/12](https://drive.google.com/file/d/1JhI6vMbPZusw977hwJDkifzDLW65TebD/view?usp=sharing)
+    - [Link para a aula do dia 12/11](https://drive.google.com/file/d/10B7dDcFTvGfDYALPJTDYnV6RUSFoBjlz/view?usp=sharing)
