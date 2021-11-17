@@ -6,12 +6,12 @@ Além disso, também estão listados os trabalhos semanais (valendo nota).
 ---
 # Trabalhos (Avaliação Parcial 1)
 
-**Trabalho 05**
+**Trabalho 05 (Entrega: 17/11)**
 
 - [Tamagotchi](trabalhos/05_1/Readme.md)
 - [Mestre dos vetores](trabalhos/05_2/Readme.md)
 
-**Trabalho 06**
+**Trabalho 06 (Entrega: 24/11)**
 
 - [Lapiseira e Grafite](trabalhos/06_1/Readme.md)
 - [Lapiseira com vários grafites](trabalhos/06_2/Readme.md)
