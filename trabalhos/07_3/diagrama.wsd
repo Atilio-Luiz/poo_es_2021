@@ -1,0 +1,36 @@
+@startuml diagrama
+'!theme resume-light
+skinparam classAttributeIconSize 0
+hide empty methods
+hide empty attributes
+skinparam nodesep 70
+skinparam ranksep 50
+package topic {
+class Topic {
+    - normalSeats : ArrayList<Pass>
+    - prioritySeats : ArrayList<Pass>
+
+    - findByName(name: String, list : ArrayList<Pass>) : int 
+    - findFirstFreePos(list : ArrayList<Pass>) : int
+    - insertOnList(pass : Pass, list : ArrayList<Pass>) : boolean 
+    - removeFromList(name : String, list : ArrayList<Pass>) : boolean 
+    + Topic(capacity : int, qtdPriority : int)
+    + insert(pass : Pass) : boolean 
+    + remove(name : String) : boolean 
+    + toString() : String 
+}
+class Pass {
+    - age : int 
+    - name : String
+
+    + Pass(name : String, age : int)
+    + isPriority() : boolean 
+    + toString() : String 
+    + getAge() : int 
+    + getName() : String 
+    + setAge(age : int)
+    + setName(name : String)
+}
+Topic --> "-proritySeats" Pass 
+}
+@enduml
