@@ -1,4 +1,4 @@
-# Sala de Cinema
+# Sala de Cinema (Vetor de nulos)
 
 ![](figura.jpg)
 
@@ -84,8 +84,8 @@ class Client {
     void setFone(String fone);
 }
 class Sala{
-    private List<Client> cadeiras;
-    List<Client> getCadeiras();
+    private ArrayList<Client> cadeiras;
+    ArrayList<Client> getCadeiras();
     public Sala(int capacidade);
     public boolean reservar(String id, String fone, int ind);
     public void cancelar(String id);
