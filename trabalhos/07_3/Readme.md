@@ -1,160 +1,132 @@
-# Topic de Luxo 
+# Contato - Agenda 1 (construtor com listas, métodos estáticos, protected atributes)
+![](figura.png)
 
-![](figura.jpg)
+O objetivo dessa atividade é implementar uma classe responsável por guardar um **único** contato da agenda telefônica do seu celular. Cada contato pode ter vários telefones.
 
-O objetivo dessa atividade é exercitar o que vocês aprenderam no cinema com algumas variações. Aqui, vamos implementar um sistema de alocação de passageiros em uma topic. Nossa topic tem uma quantidade máxima de passageiros, mas também define alguns assentos preferenciais.
-
-***
 ## Requisitos
-Seu sistema deverá:
+Seu programa deve:
 
-- **[3.0 P] Inicializar e Mostrar.** 
-    - Iniciar a topic solicitando a lotação máxima e a quantidade de cadeiras preferenciais.
-    - Mostrar o estado do trem
-        - Coloque @ na frente das cadeiras preferenciais
-        - Coloque = na frente das cadeiras normais.
-- **[5.0 P] Inserir.** 
-    - Inserir passageiros informando id e idade
-        - Se o passageiro for idoso:
-            - Se houver cadeiras preferenciais
-                - Coloque-o na primeira cadeira preferencial.
-            - Senão
-                - O coloque na primeira cadeira normal.
-        - Se o passageiro não for idoso.
-            - Se houver cadeiras não preferenciais
-                - Coloque-o na primeira cadeira não preferencial.
-            - Se não
-                - Coloque-o na primeira cadeira preferencial.
-- **[2.0 P] Remover.** 
-    - Remover passageiros por id
+- **Definir nome**
+    - Poder inicializar o contato passando o nome.
+        - Se já houver contato, inicie um novo contato.
+        - Se não houver nome, o nome default é "".
+- **Inserir telefones no contato** 
+    - Um telefone tem um label e um fone.
+    - Labels serão nomes como: casa, fixo, oi.
+    - Labels podem ser duplicados.
+    - Adapte o print para apresentar os índices.
+```sh
+# Exemplo de saída
+- ana [0:tim:3434] [1:casa:4567] [2:oi:8754] [3:casa:4567] [4:oi:8754]
+```
 
-Existe uma lista para as cadeiras normais e outra para as preferenciais. Para facilitar nas operações de busca e inserção, você deverá criar vários métodos privados para simplificar a lógica dos métodos principais.
+- **Remover telefones do contato.**    
+    - Remove os telefones pelo indice.
+- **Validando os números de telefone.**
+    - Processe os telefones para apenas permitir nos telefones os seguintes caracteres "0123456789()."
+    - Se o usuário tentar inserir individualmente um telefone invalido, avise e não insira o telefone.
 
 ***
 ## Shell
 
 ```bash
+#__case definindo nome
+$init david
+$show
+- david
 
-#######################################
-#__case Inicializar
-#######################################
-# init _lotacao _qtd_prioritarios
+#__case inserindo telefones
+$add oi 88
+$add tim 99
+$add tim 98
+$add vivo 83
 $show
-[]
-$init 5 2
-$show
-[@ @ = = =]
+- david [0:oi:88] [1:tim:99] [2:tim:98] [3:vivo:83]
 
-#######################################
-#__case Embarque
-#######################################
+#__case removendo telefone por indice
+$rm 2
+$show
+- david [0:oi:88] [1:tim:99] [2:vivo:83]
+$rm 0
+$show
+- david [0:tim:99] [1:vivo:83]
 
-$in davi 17
+#__case validando numero de fone
+$add tim 9a9
+fail: invalid number
+$add tim (85)99.99
 $show
-[@ @ =davi:17 = =]
-$in joao 103
-$show
-[@joao:103 @ =davi:17 = =]
-$in ana 35
-$show
-[@joao:103 @ =davi:17 =ana:35 =]
-$in rex 20
-$in bia 16
-$show
-[@joao:103 @bia:16 =davi:17 =ana:35 =rex:20]
-
-#######################################
-#__case Desembarque
-#######################################
-
-$out davi
-$show
-[@joao:103 @bia:16 = =ana:35 =rex:20]
-$in aragao 96
-$show
-[@joao:103 @bia:16 =aragao:96 =ana:35 =rex:20]
-
-#######################################
-#__case Erros
-#######################################
-
-$in lucas 23
-fail: topic lotada
-$out marcelo
-fail: pass nao esta na topic
-$out ana
-$in bia 13
-fail: pass ja esta na topic
-$show
-[@joao:103 @bia:16 =aragao:96 = =rex:20]
+- david [0:tim:99] [1:vivo:83] [2:tim:(85)99.99]
 $end
 #__end__
 ```
 
 ***
-## Diagrama
+## Diagrama UML
 ![](diagrama.png)
 
 
 ## Esqueleto
+
 <!--FILTER Solver.java java-->
 ```java
-class Pass {
+class Fone {
+    private String id;
+    private String number;
+    public Fone(String id, String number);
+    //verifica se o número é um número de telefone válido
+    public static boolean validate(String number);
+    //O resultado deve ficar assim
+    //oi:1234
+    public String toString();
+    //GETS e SETS
+    String getId();
+    void setId(String id);
+    String getNumber();
+    void setNumber(String number);
+}
+class Contact {
     private String name;
-    private int age;
-    public Pass(String name, int age);
-    //return true if pass.age >= 65
-    public boolean isPriority();
+    private ArrayList<Fone> fones;
+    protected String prefix = "-"; //utilizado no toString
+    //Crie um ArrayList para o ATRIBUTO fones
+    //Se a variável fones não for null, adicione todos os fones usando o método addFone
+    public Contact(String name, ArrayList<Fone> fones);
+    //Se fone for válido, insira no atributo fones
+    //Se não, informe o erro
+    public void addFone(Fone fone);
+    //Se o índice existir no ArrayList, remova o telefone com esse índice
+    public void rmFone(int index);
+    //Use um contador para mostrar o índice do telefone
+    //Use o toString do fone para adicioná-lo à saída
+    //O resultado dever ficar assim:
+    //- david [0:oi:123] [1:tim:9081] [2:claro:5431]
+    public String toString();
     //GETS e SETS
     String getName();
     void setName(String name);
-    int getAge();
-    void setAge(int age);
-    public String toString();
+    ArrayList<Fone> getFones();
 }
-class Topic {
-    private ArrayList<Pass> prioritySeats;
-    private ArrayList<Pass> normalSeats;
-    public Topic(int capacity, int qtdPriority);
-    //return the first free pos or -1
-    private int findFirstFreePos(ArrayList<Pass> list);
-    //search in list using name and return position or return -1
-    private int findByName(String name, ArrayList<Pass> list);
-    //use the findFirstFreePos to search a free position
-    //if exists, insert the pass and return true
-    //else return false
-    private boolean insertOnList(Pass pass, ArrayList<Pass> list);
-    //use the findByName method to locate pos in list, if found, remore the person
-    //setting the pos location to null
-    private boolean removeFromList(String name, ArrayList<Pass> list);
-    //use findByName to test if the pass is already in the topic
-    //use the insertOnList method to insert in the right list based in
-    //the pass.isPriority result
-    public boolean insert(Pass pass);
-    //use the removeFromList method to try to remove from both lists
-    public boolean remove(String name);
-    public String toString();
-}
-class Solver{
+public class Solver {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        Topic topic = new Topic(0, 0);
+        Contact contact = new Contact("", null);
         while(true){
             String line = scanner.nextLine();
             System.out.println("$" + line);
             String ui[] = line.split(" ");
-            if(line.equals("end")) {
+            if(ui[0].equals("end")) {
                 break;
-            } else if(ui[0].equals("init")) { //capacity qtdPriority
-                topic = new Topic(Integer.parseInt(ui[1]), Integer.parseInt(ui[2]));
+            } else if(ui[0].equals("init")) { //name
+                contact = new Contact(ui[1], null);
+            } else if(ui[0].equals("add")) {  //id fone
+                contact.addFone(new Fone(ui[1], ui[2]));
+            } else if(ui[0].equals("rm")) {   //index
+                contact.rmFone(Integer.parseInt(ui[1]));
             } else if(ui[0].equals("show")) {
-                System.out.println(topic);
-            } else if(ui[0].equals("in")) {
-                topic.insert(new Pass(ui[1], Integer.parseInt(ui[2])));
-            } else if(ui[0].equals("out")) {//value value
-                topic.remove(ui[1]);
+                System.out.println(contact);
             } else {
-                System.out.println("fail: comando invalido");
+                System.out.println("fail: invalid command");
             }
         }
         scanner.close();
