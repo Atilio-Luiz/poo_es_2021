@@ -1,0 +1,38 @@
+@startuml diagrama
+'!theme resume-light
+skinparam classAttributeIconSize 0
+hide empty methods
+hide empty attributes
+skinparam nodesep 70
+skinparam ranksep 50
+package contato {
+class Contact {
+    # prefix : String 
+    - fones : ArrayList<Fone>
+    - name : String 
+
+    + Contact(name : String, fones : ArrayList<Fone>)
+    + addFone(fone : Fone) 
+    + rmFone(index : int)
+    + toString() : String 
+    + getFones() : ArrayList<Fone> 
+    + getName() : String 
+    + setFones(fones : ArryList<Fone>)
+    + setName(name : String)
+}
+class Fone {
+    - id : String 
+    - number : String 
+
+    + Fone(id : String, number : String)
+    + isValid() : boolean 
+    + {static} validate(number : String) : boolean 
+    + toString() : String
+    + getId() : String 
+    + getNumber() : String 
+    + setId(id : String)
+    + setNumber(number : String)
+}
+Contact --> "-fones" Fone 
+}
+@enduml

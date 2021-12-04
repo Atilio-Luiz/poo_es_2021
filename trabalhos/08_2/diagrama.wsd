@@ -1,0 +1,54 @@
+@startuml diagrama
+'!theme resume-light
+skinparam classAttributeIconSize 0
+hide empty methods
+hide empty attributes
+skinparam nodesep 70
+skinparam ranksep 60
+package agenda1 {
+class Agenda {
+    - contacts : List<Contact>
+    __
+    + Agenda()
+    + addContact(contact : Contact)
+    + findContact(name : String) : Contact 
+    + rmContact(name : String)
+    + search(pattern : String) : List<Contact>
+    + toString() : String 
+    + getContacts() : List<Contact>
+    ..
+    - findPosByName(name : String) : int
+}
+class Contact {
+    # prefix : String 
+    - fones : List<Fone>
+    - name : String 
+    __
+    + Contact(name : String, fones : List<Fone>)
+    + addFone(fone : Fone) 
+    + rmFone(index : int)
+    + toString() : String 
+    ..
+    + getFones() : List<Fone> 
+    + getName() : String 
+    + setFones(fones : List<Fone>)
+    + setName(name : String)
+}
+class Fone {
+    - id : String 
+    - number : String 
+    __
+    + Fone(id : String, number : String)
+    + isValid() : boolean 
+    + {static} validate(number : String) : boolean 
+    + toString() : String
+    ..
+    + getId() : String 
+    + getNumber() : String 
+    + setId(id : String)
+    + setNumber(number : String)
+}
+Agenda --> "-contacts" Contact
+Contact --> "-fones" Fone 
+}
+@enduml
