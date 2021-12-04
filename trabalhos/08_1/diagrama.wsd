@@ -1,0 +1,66 @@
+@startuml diagrama
+'!theme resume-light
+skinparam classAttributeIconSize 0
+hide empty methods
+hide empty attributes
+skinparam nodesep 110
+skinparam ranksep 80
+package agencia {
+class Conta {
+    - financas : Financas
+    - id : int
+    __
+    + Conta(id : int)
+    + creditar(label : Label, value : int) : boolean
+    + extornar(indice : int) : boolean 
+    + sacar(value : int) : boolean 
+    + tarifar(value : int) : boolean 
+    + toString() : String 
+    ..
+    + getFinancas() : Financas
+}
+class Financas {
+    - extrato : List<Operacao>
+    - nextID : int
+    - saldo : int
+    __
+    + Financas()
+    + addOperacao(label : Label, value : int)
+    + getExtrato(qtdOp : int) : List<Operacao>
+    + toString() : int
+    ..
+    + getExtrato() : List<Operacao>
+    + getSaldo() : int
+}
+class Operacao {
+    - indice : int
+    - label : label
+    - saldo : int
+    - value : int
+    __
+    + Operacao(indice : int, label : Label, value : int, saldo : int)
+    + {static} pad(string : String, length : int) : String 
+    + toString() : String 
+    ..
+    + getIndice() : int
+    + getLabel() : Label 
+    + getSaldo() : int 
+    + getValue() : int 
+}
+enum Label <<enumeration>> {
+    + {static} abertura
+    + {static} deposito
+    + {static} extorno 
+    + {static} saque 
+    + {static} tarifa 
+    - name : String 
+    __
+    + toString() : String 
+    ..
+    + getName() : String 
+}
+Conta -right--> "-financas" Financas
+Financas --> "-extrato" Operacao 
+Operacao -left--> "-label" Label
+}
+@enduml
