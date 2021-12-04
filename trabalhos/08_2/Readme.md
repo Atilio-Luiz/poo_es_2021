@@ -108,13 +108,14 @@ class Agenda {
     //por fim, ordene a lista para ficar em ordem alfabética
     public void addContact(Contact contact) {
         // O código para a ordenação da lista já está feito logo abaixo
+        // esta é a última linha de código da função
         this.contacts.sort((Contact c1, Contact c2) -> (c1.getName().compareTo(c2.getName())));
     }
     //Utilize o método findPosByName
     public void rmContact(String name);
     //Monte uma lista auxiliar procurando no .toString() de cada contato
     //se ele possui a substring procurada.
-    //reveja os métodos da classe String e veja se algum te ajuda
+    //dica: reveja os métodos da classe String e procure algum que ajude aqui
     public List<Contact> search(String pattern);
     public List<Contact> getContacts();
     public String toString();
@@ -161,6 +162,7 @@ class Contact {
     //utilize o addFone para adicionar apenas os fones válidos
     public void setFones(List<Fone> fones);
 }
+// A classe Solver já está finalizada.
 class Solver {
     //cria um contato a partir do vetor de entrada tal como
     //add joao oi:123 tim:432 claro:09123
