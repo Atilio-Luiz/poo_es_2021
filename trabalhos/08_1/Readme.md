@@ -109,6 +109,9 @@ Os gets e sets estão marcados em separado para facilitar a visualização dos m
 
 ***
 ## Esqueleto
+
+Nesta implementação, vocês vão encontrar o tipo de dado **List**. Todo *ArrayList* é-um-tipo-de *List*. Logo, uma variável do tipo List pode referenciar objetos do tipo ArrayList. Essa característica se chama *polimorfismo* e foi introduzida na aula.  
+
 <!--FILTER Solver.java java-->
 ```java
 //Essa enumeração guarda possíveis labels para as operações.
