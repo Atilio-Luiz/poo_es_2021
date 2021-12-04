@@ -88,6 +88,12 @@ $end
 
 <!--FILTER Solver.java java-->
 ```java
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+import java.util.stream.Collectors;
+
 class Agenda {
     private List<Contact> contacts;
     public Agenda();
