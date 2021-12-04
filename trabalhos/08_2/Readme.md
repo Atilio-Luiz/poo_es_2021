@@ -101,16 +101,20 @@ class Agenda {
     //retorna a posição do contato com esse nome no vetor ou -1 se não existir.
     private int findPosByName(String name);
     //retorna o objeto contato com esse nome ou null se não existir
-    //utilize o método findPos
+    //utilize o método findPosByName
     public Contact findContact(String name);
     //se nenhum contato existir com esse nome, adicione
     //se ja existir, faça o merge adicionando os telefones
-    //se tiver adicionado um novo contato, ordene a lista para ficar em ordem alfabética
-    public void addContact(Contact contact);
-    //Utilize o método findPos
+    //por fim, ordene a lista para ficar em ordem alfabética
+    public void addContact(Contact contact) {
+        // O código para a ordenação da lista já está feito logo abaixo
+        this.contacts.sort((Contact c1, Contact c2) -> (c1.getName().compareTo(c2.getName())));
+    }
+    //Utilize o método findPosByName
     public void rmContact(String name);
     //Monte uma lista auxiliar procurando no .toString() de cada contato
     //se ele possui a substring procurada.
+    //reveja os métodos da classe String e veja se algum te ajuda
     public List<Contact> search(String pattern);
     public List<Contact> getContacts();
     public String toString();
