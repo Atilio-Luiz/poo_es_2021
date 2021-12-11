@@ -1,0 +1,73 @@
+@startuml diagrama
+'!theme resume-light
+skinparam classAttributeIconSize 0
+hide empty methods
+hide empty attributes
+skinparam nodesep 70
+skinparam ranksep 60
+package agenda3 {
+class Agenda {
+    - contacts : List<Contact>
+    __
+    - findPosByName(name : String) : int
+    ..
+    + Agenda()
+    + addContact(contact : Contact)
+    + findContact(name : String) : Contact 
+    + rmContact(name : String)
+    + search(pattern : String) : List<Contact>
+    + toString() : String 
+    ..
+    + getContacts() : List<Contact>
+}
+class Contact {
+    # prefix : String 
+    - fones : List<Fone>
+    - name : String 
+    __
+    + Contact(name : String, fones : List<Fone>)
+    + addFone(fone : Fone) 
+    + rmFone(index : int)
+    + toString() : String 
+    ..
+    + getFones() : List<Fone> 
+    + getName() : String 
+    + setFones(fones : List<Fone>)
+    + setName(name : String)
+}
+class Fone {
+    - id : String 
+    - number : String 
+    __
+    + Fone(id : String, number : String)
+    + isValid() : boolean 
+    + {static} validate(number : String) : boolean 
+    + toString() : String
+    ..
+    + getId() : String 
+    + getNumber() : String 
+    + setId(id : String)
+    + setNumber(number : String)
+}
+class ContactStar {
+    - star : boolean
+    __
+    + ContactStar(name : String, fones : List<Fone>, star : boolean)
+    + toString() : String 
+    ..
+    + getStar() : boolean 
+    +setStar(value : boolean)
+}
+class AgendaStar {
+    + getStarred() : List<Contact>
+    + star(name : String, value : boolean)
+    + toString() : String 
+    ..
+    + AgendaStar()
+}
+Agenda --> "-contacts" Contact
+Contact --> "-fones" Fone 
+ContactStar --|> Contact
+AgendaStar --|> Agenda
+}
+@enduml
