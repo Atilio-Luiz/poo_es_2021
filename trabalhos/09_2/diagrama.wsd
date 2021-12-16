@@ -1,0 +1,69 @@
+@startuml diagrama
+'!theme resume-light
+skinparam classAttributeIconSize 0
+'hide empty methods
+'hide empty attributes
+skinparam nodesep 70
+skinparam ranksep 60
+package cadastro {
+class SavingsAccount {
+    + SavingsAccount(id : int, idClient : String)
+    + monthlyUpdate()
+    + toString() : String
+}
+class Client {
+    - accounts : List<Account>
+    - clientId : String
+    __
+    + Client(clientId : String)
+    + addAccount(account : Account)
+    + toString() : String 
+    ..
+    + getAccounts() : List<Account>
+    + getClientId() : String 
+    + setAccounts(accounts : List<Account>)
+    + setClientId(clientId : String)
+}
+class CheckingAccount {
+    + CheckingAccount(id : int, idClient : String)
+    + monthlyUpdate()
+    + toString() : String 
+}
+class Account {
+    # balance : float
+    # clientId : String 
+    # id : int 
+    # type : String
+    __
+    + Account(id : int, clientId : String)
+    + deposit(value : float)
+    + monthlyUpdate()
+    + transfer(other : Account, value : float)
+    + withdraw(value : float)
+    + toString() : String 
+    ..
+    + getBalance() : float 
+    + getClientId() : String
+    + getId() : int 
+    + getType() : String 
+}
+class BankAgency {
+    - accounts : Map<Integer, Account>
+    - clients : Map<String, Client>
+    - nextAccountId : int
+    __
+    - getAccount(id : int) : Account
+    ..
+    + BankAgency()
+    + addClient(clientId : String)
+    + deposit(idConta : int, value : float)
+    + monthlyUpdate()
+    + transfer(contaDe : int, contaPara : int, value : float)
+    + withdraw(idConta : int, value : float)
+    + toString() : String
+}
+SavingsAccount --|> Account
+Client --> "-account" Account 
+CheckingAccount --|> Account  
+}
+@enduml

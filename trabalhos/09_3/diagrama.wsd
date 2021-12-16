@@ -1,0 +1,62 @@
+@startuml diagrama
+'!theme resume-light
+skinparam classAttributeIconSize 0
+'hide empty methods
+'hide empty attributes
+skinparam nodesep 70
+skinparam ranksep 60
+package salario {
+class UFC {
+    - funcionarios : Map<String, Funcionario>
+    
+    + UFC()
+    + addFuncionario(funcionario : Funcionario)
+    + getFuncionario(nome : String) : Funcionario 
+    + rmFuncionario(nome : String)
+    + setBonus(bonus : int)
+    + toString() : String 
+}
+class Terceirizado {
+    # horas : int 
+    # isSalubre : boolean 
+    __
+    + Terceirizado(nome : String, horas : int, isSalubre : String)
+    + addDiaria()
+    + getHoras() : int 
+    + getIsSalubre() : String 
+    + getSalario() : int 
+    + toString() : String
+}
+class STA {
+    # nivel : int
+    __
+    + STA(nome : String, nivel : int)
+    + getNivel() : int 
+    + getSalario() : int
+    + toString() : String 
+}
+class Professor {
+    # classe : String
+    __
+    + Professor(nome : String, classe : String)
+    + getClasse() : String 
+    + getSalario() : int 
+    + toString() : String 
+}
+class Funcionario {
+    # bonus : int 
+    # diarias : int 
+    # maxDiarias : int 
+    # nome : String
+    __
+    + Funcionario(nome : String) 
+    + addDiaria()
+    + getNome() : String 
+    + getSalario() : int 
+    + setBonus(bonus : int)
+}
+Terceirizado --|> Funcionario
+STA --|> Funcionario
+Professor --|> Funcionario  
+}
+@enduml
