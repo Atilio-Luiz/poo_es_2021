@@ -199,7 +199,7 @@ class Solver {
             } else if(ui[0].equals("add")) { //name label:fone label:fone label:fone
                 agenda.addContact(Solver.parseContact(ui));
             } else if(ui[0].equals("rmContact")) { //name
-                agenda.rmContact(ui[1]);;
+                agenda.rmContact(ui[1]);
             } else if(ui[0].equals("rmFone")) { //name index
                 agenda.findContact(ui[1]).rmFone(Integer.parseInt(ui[2]));
             } else if(ui[0].equals("show")) {
