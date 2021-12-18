@@ -11,7 +11,7 @@ Ampliando a atividade de agenda 2, vamos criar uma agenda que gerencia os nossos
 O sistema deverá:
 - Partida
     - Você deve utilizar o código construído na atividade busca. Você deve partir do código do projeto Busca e NÃO DEVE MODIFICAR em nada as classes originais.
-    - Você deve criar uma classe **ContatoStar** que herda de *Contato* e adiciona a ação de favoritar.
+    - Você deve criar uma classe **ContactStar** que herda de *Contact* e adiciona a ação de favoritar.
         - Para isso o novo contato ganhará um atributo `star` que marca se ele está favoritado.
     - Você deve criar uma classe **AgendaStar** que herda de *Agenda* e adiciona a ação de favoritar e pegar favoritos.
         - A nova agenda ganhará os métodos `star` e `getStarred` para favoritar e pegar os favoritos.
@@ -24,7 +24,7 @@ O sistema deverá:
     - Favoritar contatos. (star)
     - Desfavoritar contatos. (unstar)
     - Mostrar apenas os favoritos. (starred)
-    
+
 - Sua **AgendaStar** deve ser capaz de manipular tanto contatos normais quanto ContactStar, mas só deve ser capaz de favoritar ContactStar
 
 ## Shell
