@@ -37,7 +37,7 @@ class Account {
     __
     + Account(id : int, clientId : String)
     + deposit(value : float)
-    + monthlyUpdate()
+    + {abstract} monthlyUpdate()
     + transfer(other : Account, value : float)
     + withdraw(value : float)
     + toString() : String 

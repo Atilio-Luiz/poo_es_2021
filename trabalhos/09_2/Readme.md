@@ -12,8 +12,8 @@ O objetivo dessa atividade é implementar uma agência bancária simplificada. D
 - Mensalmente:
     - Contas corrente vão receber uma tarifa de 20 reais podendo inclusive ficar negativas.
     - Contas poupança vão aumentar de 1 porcento.
-- Sua agência deve ter uma "lista" de clientes e de contas.
-    - A lista pode ser linear ou usando mapas.
+- Sua agência deve ter uma "lista" de clientes e outra de contas.
+    - As listas podem ser lineares(ArrayList, LinkedList, etc) ou você pode utilizar mapas(HashMap, TreeMap, etc). Se você escolher trabalhar com listas lineares, terá que modificar o tipo dos atributos `clients`e `accounts` na classe *BankAgency*.
 - O cliente só tem duas contas, mas imagine que no futuro ele poderá ter várias.
 - As contas devem ser tratadas utilizando polimorfismo.
 
@@ -184,7 +184,7 @@ class BankAgency {
     private Map<String, Client> clients;
     private Map<Integer, Account> accounts;
     private int nextAccountId = 0;
-    //obtém conta ou lança excessão
+    //obtém conta ou lança exceção
     private Account getAccount(int id);
     public BankAgency();
     //se o cliente não existir
