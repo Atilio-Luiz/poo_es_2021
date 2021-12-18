@@ -114,17 +114,13 @@ public class Fone {
     void setId(String id);
     String getNumber();
     void setNumber(String number);
-    //utiliza o static validate para retornar se essa instancia do fone é valida
-    public boolean isValid();
 }
 class Contact {
     private String name;
     private List<Fone> fones;
     protected String prefix = "-"; //utilizado no toString
-    private boolean star;
     //Crie um ArrayList para o ATRIBUTO fones
     //Se a variável fones não for null, adicione todos os fones usando o método addFone
-    //Inicie star como false
     public Contact(String name, List<Fone> fones);
     //Se fone for válido, insira no atributo fones
     //Se não, informe o erro
@@ -140,9 +136,6 @@ class Contact {
     String getName();
     void setName(String name);
     List<Fone> getFones();
-    //limpe a lista de fones
-    //utilize o addFone para adicionar apenas os fones válidos
-    public void setFones(List<Fone> fones); 
 }
 class Agenda {
     private List<Contact> contacts;
@@ -160,8 +153,8 @@ class Agenda {
     //Monte uma lista auxiliar procurando no .toString() de cada contato
     //se ele possui a substring procurada.
     public List<Contact> search(String pattern);
-    public String toString();
     List<Contact> getContacts();
+    public String toString();
 }
 class ContactStar extends Contact {
     private boolean star;
