@@ -33,6 +33,7 @@ class Contact {
     + getFones() : List<Fone> 
     + getName() : String 
     + setName(name : String)
+    + setFones(fones : List<Fone>)
 }
 class Fone {
     - id : String 
@@ -41,6 +42,7 @@ class Fone {
     + Fone(id : String, number : String) 
     + {static} validate(number : String) : boolean 
     + toString() : String
+    + isValid() : boolean
     ..
     + getId() : String 
     + getNumber() : String 

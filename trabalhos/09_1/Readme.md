@@ -110,10 +110,12 @@ public class Fone {
     //oi:1234
     public String toString();
     //GETS e SETS
-    String getId();
-    void setId(String id);
-    String getNumber();
-    void setNumber(String number);
+    public String getId();
+    public void setId(String id);
+    public String getNumber();
+    public void setNumber(String number);
+    //utiliza o static validate para retornar se essa instancia do fone é valida
+    public boolean isValid();
 }
 class Contact {
     private String name;
@@ -133,18 +135,21 @@ class Contact {
     //- david [0:oi:123] [1:tim:9081] [2:claro:5431]
     public String toString();
     //GETS e SETS
-    String getName();
-    void setName(String name);
-    List<Fone> getFones();
+    public String getName();
+    public void setName(String name);
+    public List<Fone> getFones();
+    //limpe a lista de fones
+    //utilize o addFone para adicionar apenas os fones válidos
+    public void setFones(List<Fone> fones);
 }
 class Agenda {
     private List<Contact> contacts;
     public Agenda();
     //retorna a posição do contato com esse nome no vetor ou -1 se não existir.
-    private int findPos(String name);
+    private int findPosByName(String name);
     //retorna o objeto contato com esse nome ou null se não existir
-    //utilize o método findPos
-    public Contact getContact(String name);
+    //utilize o método findPosByName
+    public Contact findContact(String name);
     //se nenhum contato existir com esse nome, adicione
     //se ja existir, faça o merge adicionando os telefones
     public void addContact(Contact contact);
@@ -153,7 +158,7 @@ class Agenda {
     //Monte uma lista auxiliar procurando no .toString() de cada contato
     //se ele possui a substring procurada.
     public List<Contact> search(String pattern);
-    List<Contact> getContacts();
+    public List<Contact> getContacts();
     public String toString();
 }
 class ContactStar extends Contact {
