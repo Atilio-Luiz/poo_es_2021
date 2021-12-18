@@ -201,7 +201,7 @@ class Solver {
             } else if(ui[0].equals("rm")) { //name
                 agenda.rmContact(ui[1]);;
             } else if(ui[0].equals("rmFone")) { //name index
-                agenda.getContact(ui[1]).rmFone(Integer.parseInt(ui[2]));
+                agenda.findContact(ui[1]).rmFone(Integer.parseInt(ui[2]));
             } else if(ui[0].equals("show")) {
                 System.out.println(agenda);
             } else if(ui[0].equals("star")) {
