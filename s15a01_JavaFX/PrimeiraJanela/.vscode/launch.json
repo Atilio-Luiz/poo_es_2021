@@ -1,0 +1,74 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch GridPaneExample01",
+            "request": "launch",
+            "mainClass": "GridPaneExample01",
+            "projectName": "PrimeiraJanela_35fd2ded",
+            "vmArgs": "--module-path /home/fox/javafx/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.web"
+        },
+        {
+            "type": "java",
+            "name": "Launch FlowPaneExample01",
+            "request": "launch",
+            "mainClass": "FlowPaneExample01",
+            "projectName": "PrimeiraJanela_35fd2ded",
+            "vmArgs": "--module-path /home/fox/javafx/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.web"
+        },
+        {
+            "type": "java",
+            "name": "Launch VBoxExample01",
+            "request": "launch",
+            "mainClass": "VBoxExample01",
+            "projectName": "PrimeiraJanela_35fd2ded",
+            "vmArgs": "--module-path /home/fox/javafx/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.web"
+        },
+        {
+            "type": "java",
+            "name": "Launch HelloButton",
+            "request": "launch",
+            "mainClass": "HelloButton",
+            "projectName": "PrimeiraJanela_35fd2ded",
+            "vmArgs": "--module-path /home/fox/javafx/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.web"
+        },
+        {
+            "type": "java",
+            "name": "Launch HelloWorld2",
+            "request": "launch",
+            "mainClass": "examples.HelloWorld2",
+            "projectName": "PrimeiraJanela_35fd2ded",
+            "vmArgs": "--module-path /home/fox/javafx/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.web"
+        },
+        {
+            "type": "java",
+            "name": "Launch HelloWorld",
+            "request": "launch",
+            "mainClass": "examples.HelloWorld",
+            "projectName": "PrimeiraJanela_35fd2ded",
+            "vmArgs": "--module-path /home/fox/javafx/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.web"
+        },
+        {
+            "type": "java",
+            "name": "Launch HelloWorld2",
+            "request": "launch",
+            "mainClass": "HelloWorld2",
+            "projectName": "PrimeiraJanela_35fd2ded",
+            "vmArgs": "--module-path /home/fox/javafx/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.web"
+        },
+        {
+            "type": "java",
+            "name": "Launch HelloWorld",
+            "request": "launch",
+            "mainClass": "HelloWorld",
+            "projectName": "PrimeiraJanela_35fd2ded",
+            "vmArgs": "--module-path /home/fox/javafx/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.web"
+        },
+        {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": ""
+        }
+    ]
+}

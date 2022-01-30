@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch LoginWindow",
+            "request": "launch",
+            "mainClass": "LoginWindow",
+            "projectName": "LoginWindow_e2233668",
+            "vmArgs": "--module-path /home/fox/javafx/javafx-sdk-17.0.1/lib --add-modules javafx.controls,javafx.base,javafx.fxml,javafx.graphics,javafx.media,javafx.web"
+        },
+        {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": ""
+        }
+    ]
+}
